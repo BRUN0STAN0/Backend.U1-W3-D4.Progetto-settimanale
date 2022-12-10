@@ -16,6 +16,13 @@ namespace Backend.U1_W3_D4.Progetto_settimanale
             {
                 LabelCarrelloAggiungi.Visible = true;
             }
+            LabelCarrelloNumeroArticoli.Text = Articolo.CarrelloUtente.Count.ToString();
+            double prezzoCarrelloTotale = 0;
+            foreach (Articolo a in Articolo.CarrelloUtente)
+            {
+                prezzoCarrelloTotale += a.Prezzo; ;
+            }
+            LabelCarrelloTotale.Text = prezzoCarrelloTotale.ToString();
         }
 
         protected void ResettaCarrello_Click(object sender, EventArgs e)
@@ -35,7 +42,6 @@ namespace Backend.U1_W3_D4.Progetto_settimanale
                     Articolo.CarrelloUtente.Add(a);
                     LabelCarrelloNumeroArticoli.Text = (int.Parse(LabelCarrelloNumeroArticoli.Text) + 1).ToString();
                     LabelCarrelloTotale.Text = (Convert.ToDouble(LabelCarrelloTotale.Text) + a.Prezzo).ToString();
-
                 }
             }
         }

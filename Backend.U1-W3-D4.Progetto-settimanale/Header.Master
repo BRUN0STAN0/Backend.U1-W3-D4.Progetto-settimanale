@@ -15,18 +15,23 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <nav class="navbar bg-dark">
+            <div class="navbar bg-dark position-fixed w-100" style="z-index:10">
                 <div class="container-fluid">
                     <a href="Default.aspx" class="navbar-brand text-white">Il pianeta delle sedie</a>
                     <a href="Default.aspx" class="navbar-brand text-white fs-3 fw-bolder">CHAIR'STAR</a>
                     <div class="d-flex align-items-center  text-white" >
                         <asp:Button ID="LabelCarrelloAggiungi" CssClass="btn btn-warning" Visible="false" Text="Aggiungi al Carrello" OnClick="LabelCarrelloAggiungi_Click" runat="server" />
                         <asp:Label ID="LabelCarrelloNumeroArticoli" CssClass="btn btn-secondary" Text="0" Value="0" runat="server" ></asp:Label>
-                        <asp:Label ID="LabelCarrelloTotale" CssClass="btn btn-success" Text="0" Value="0" runat="server" > </asp:Label>
-                        <asp:Button ID="ResettaCarrello" CssClass="btn btn-danger ms-2" Text="X" runat="server" OnClick="ResettaCarrello_Click" />
+                        <asp:Label ID="LabelCarrelloTotale" CssClass="btn btn-success" Text="0" Value="0"  runat="server" > </asp:Label> € 
+                        <a href="Carrello.aspx" class="btn ms-2 btn-outline-info">🛒</a>
+                        <asp:Button ID="ResettaCarrello" CssClass="btn btn-danger" Text="DEL" runat="server" OnClick="ResettaCarrello_Click" />
                     </div>
                 </div>
-            </nav>
+            </div>
+            <br />
+            
+            <br />
+            <br />
             <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
         </div>

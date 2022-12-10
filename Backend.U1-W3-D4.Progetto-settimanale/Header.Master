@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header.master.cs" Inherits="Backend.U1_W3_D4.Progetto_settimanale.Header" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar bg-dark">
+                <div class="container-fluid">
+                    <a href="Default.aspx" class="navbar-brand text-white">Il pianeta delle sedie</a>
+                    <a href="Default.aspx" class="navbar-brand text-white fs-3 fw-bolder">CHAIR'STAR</a>
+                    <div class="d-flex align-items-center  text-white" >
+                        <asp:Button ID="LabelCarrelloAggiungi" CssClass="btn btn-warning" Visible="false" Text="Aggiungi al Carrello" OnClick="LabelCarrelloAggiungi_Click" runat="server" />
+                        <asp:Label ID="LabelCarrelloNumeroArticoli" CssClass="btn btn-secondary" Text="0" Value="0" runat="server" ></asp:Label>
+                        <asp:Label ID="LabelCarrelloTotale" CssClass="btn btn-success" Text="0" Value="0" runat="server" > </asp:Label>
+                        <asp:Button ID="ResettaCarrello" CssClass="btn btn-danger ms-2" Text="X" runat="server" OnClick="ResettaCarrello_Click" />
+                    </div>
+                </div>
+            </nav>
+            <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
